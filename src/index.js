@@ -17,15 +17,6 @@ Client.on("messageCreate", message => {
     if(message.content === "tu marches ?"){
     message.channel.send("Non je cours, il est con lui.");
     }
-    
-
-    if(message.content === prefix + "pingsansRythm"){
-        const embed = new Discord.MessageEmbed()
-        .setColor("#B22222")
-        .setTitle("Pong !");
-        message.channel.send({embed: [embed]});
-        
-    }
 });
 
 Client.login("ODg1NjA5MzAzOTAwMzIzOTEy.YTph7w.oh0BqOFojCu5baIxP1IVEmDbHSM");

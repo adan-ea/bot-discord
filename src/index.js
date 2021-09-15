@@ -2,7 +2,7 @@ const { TOKEN } = require('./util/config');
 const GotoClient = require('./structures/GotoClient');
 
 let client = new GotoClient({
-    prefix: '?'
+    prefix: '!'
 })
 
 client.login(TOKEN);

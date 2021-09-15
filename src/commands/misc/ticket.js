@@ -26,7 +26,7 @@ class TicketCommand extends Command {
     exec(message, args) {
         if (message.channel.id === "887680265806311434") {
             if (args.titreTicket === null || args.contenuTicket === null) {
-                return message.channel.send("il te manque un truc enculé");
+                return message.channel.send("il te manque un truc");
             } else {
                 return message.channel.send({
                     embeds: [

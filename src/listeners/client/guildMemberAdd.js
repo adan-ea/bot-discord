@@ -1,4 +1,5 @@
 const { Listener } = require('discord-akairo');
+const { Message } = require('discord.js');
 
 class GuildMemberAddListener extends Listener {
     constructor() {
@@ -9,7 +10,9 @@ class GuildMemberAddListener extends Listener {
     }
 
     exec(member) {
+
         console.log(`Bonjour à tous, je suis <@${member.user.id}>`);
+        return message.channelID("885604310036123708").send("salut");
         /*
         .setAuthor(`${args.member.displayName}`,"image nouvel arrivant")
         .setThumbnail("image nouvel arrivant")

@@ -23,8 +23,8 @@ class AideCommand extends Command {
                 .setAuthor(`${args.member.displayName}`, args.member.user.displayAvatarURL())
                 .setTitle(`Commandes de ce bot`)
                 .setThumbnail("https://cdn.discordapp.com/attachments/763373898779197481/887604870578843668/Zw.png")
-                .addField(`!ticket [titre ticket]*,* [raison ticket]`, `Vous permet de créer un ticket si vous avez un soucis, je m'occuperai du ticket lorsque j'ai le temps`, true)
-                .addField(`!userInfo (@user)`, `Donne des informations concernant l'utilisateur en question`, true)
+                .addField(`(en cours de création) !ticket [titre ticket], [raison ticket]`, `Vous permet de créer un ticket si vous avez un soucis. Tout abus sera suivi d'un ban.`, true)
+                .addField(`!userinfo (@user)`, `Donne des informations concernant l'utilisateur en question`, true)
 
                 //node .\src\index.js
                 .setFooter(`() = optionnel | [] = requis`)

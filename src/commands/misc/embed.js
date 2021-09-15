@@ -8,10 +8,12 @@ class EmbedCommand extends Command {
         });
     }
     exec(message) {
-        return message.channel.send({ embeds: [
-            this.client.functions.embed()
-            .setDescription("Hello !")
-        ] });
+        return message.channel.send({
+            embeds: [
+                this.client.functions.embed()
+                .setDescription("Hello !")
+            ]
+        });
     }
 }
 

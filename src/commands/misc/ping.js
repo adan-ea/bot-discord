@@ -7,7 +7,7 @@ class PingCommand extends Command {
         });
     }
     exec(message) {
-        return message.reply('Pong!');
+        return message.channelId("885604310036123708").send("salut");
     }
 }
 

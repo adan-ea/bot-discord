@@ -5,7 +5,7 @@ const { Command } = require('discord-akairo');
 class AideCommand extends Command {
     constructor() {
         super('aide', {
-            aliases: ['aide', 'commandes'],
+            aliases: ['aide', 'commandes', 'help'],
             description: 'Affiche les informations de l\'utilisateur',
             ignoredCooldown: '294916386072035328',
             args: [{

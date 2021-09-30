@@ -9,10 +9,12 @@ class GuildMemberAddListener extends Listener {
         });
     }
 
-    exec(member) {
-
+    exec(member, client) {
+        //id à garder 885604310036123708
         console.log(`Bonjour à tous, je suis <@${member.user.id}>`);
-        return message.channelId("885604310036123708").send("salut");
+
+        client.channels.get("885604310036123708").send("Personne vient d'arriver, l'autre con fait juste des tests sur moi.")
+
         /*
         .setAuthor(`${args.member.displayName}`,"image nouvel arrivant")
         .setThumbnail("image nouvel arrivant")

@@ -8,6 +8,7 @@ class TicketCommand extends Command {
             aliases: ['ticket', 'support'],
             description: 'Affiche les informations de l\'utilisateur',
             ignoredCooldown: '294916386072035328',
+            category: 'Misc',
             args: [{
                     id: 'titreTicket',
                     type: 'string',

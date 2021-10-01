@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "discord.js": "^13.1.0",
-    "discord-akairo":"github:SkyBlockDev/discord-akairo"
+    "common-tags": "^1.8.0",
+    "discord-akairo": "github:SkyBlockDev/discord-akairo",
+    "discord.js": "^13.1.0"
   }
 }

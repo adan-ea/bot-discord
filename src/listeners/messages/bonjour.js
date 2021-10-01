@@ -1,20 +1,19 @@
 const { Listener } = require("discord-akairo");
 const { Channel } = require("discord.js");
 
-class DisCeciListener extends Listener {
+class BonjourListener extends Listener {
     constructor() {
-        super('disCeci', {
+        super('bonjour', {
             emitter: 'client',
             event: 'messageCreate'
         });
     }
 
     exec(message) {
-        console.log('Un nouveau message !');
 
         if (!message.author.bot) {
-            if (message.content.match('di')) {
-                message.reply('Fous leur la paix avec tes vieux tests là.')
+            if (message.content.match('Hello there')) {
+                message.reply('https://tenor.com/view/hello-there-general-kenobi-star-wars-grevious-gif-17774326');
             }
 
         }
@@ -23,4 +22,4 @@ class DisCeciListener extends Listener {
     }
 }
 
-module.exports = DisCeciListener;
+module.exports = BonjourListener;

@@ -32,7 +32,7 @@ class UserInfoCommand extends Command {
                 .addField(`Création le :`, `${args.member.user.createdAt.getDate()}/${args.member.user.createdAt.getMonth()}/${args.member.user.createdAt.getFullYear()} à ${args.member.user.createdAt.getHours()}:${args.member.user.createdAt.getMinutes()}`, true)
                 .addField(`Rejoint le :`, `${args.member.guild.joinedAt.getDate()}/${args.member.guild.joinedAt.getMonth()}/${args.member.guild.joinedAt.getFullYear()} à ${args.member.guild.joinedAt.getHours()}:${args.member.guild.joinedAt.getMinutes()}`, true)
                 .addField('Roles', `${args.member.roles}`)
-                //node .\src\index.js
+                //pm2 start .\src\index.js --watch
                 .setFooter(`ID : ${args.member.id}`)
                 .setTimestamp()
 

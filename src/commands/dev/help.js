@@ -43,7 +43,7 @@ class helpCommand extends Command {
                 `**\`${prefix}help <commande>\` pour plus d'informations spécifiques.**
             `
             )
-                .setFooter(`() = alias | <> = optionnel | [] = requis | (Il ne faut pas les inclure dans vos commandes)`)
+                .setFooter(`( ) = alias | < > = optionnel | [ ] = requis | (Il ne faut pas les inclure dans vos commandes)`)
 
             return message.channel.send({ embeds: [embed] });
         }

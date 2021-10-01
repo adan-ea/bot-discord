@@ -19,7 +19,8 @@ class GuildMemberAddListener extends Listener {
         .setAuthor(`${args.member.displayName}`,"image nouvel arrivant")
         .setThumbnail("image nouvel arrivant")
         .setTitle(`Bienvenue sur le serveur @nomPersonne !`)
-        .setDescription(`Bonjour à toi nouveau bg ! Pense à passer dans le salon <#816170263653253132> pour obtenir le rôle Viewer et nous rejoindre officiellement ! )
+        .setDescription(`Bonjour à toi @user ! Surtout n'oublie pas, le bon sens est une règle, veille à respecter ce qui devrait être évident ! 
+        Nous souhaitons que ton expérience parmi nous soit aussi plaisante que possible, et nous nous y emploierons constamment.`)
         .setFooter('T\'es vraiment bg tu sais ?', "image serveur")
         .setTimestamp()
         */

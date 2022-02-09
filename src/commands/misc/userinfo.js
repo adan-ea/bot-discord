@@ -1,12 +1,10 @@
-const { Command } = require('discord-akairo');
-
+/*const {Command} = require('discord-akairo');
 
 
 class UserInfoCommand extends Command {
     constructor() {
         super('userInfo', {
             aliases: ['userInfo', 'info'],
-            description: '',
             description: {
                 content: 'Affiche les informations de l\'utilisateur',
                 usage: 'user(info) <member>',
@@ -22,19 +20,18 @@ class UserInfoCommand extends Command {
         });
     }
 
-    exec(message, args) {
+    exec(message, {member}) {
         return message.channel.send({
             embeds: [
                 this.client.functions.embed()
-                .setAuthor(`${args.member.displayName}`, args.member.user.displayAvatarURL())
-                .setTitle(`${args.member.displayName}`)
-                .setThumbnail(args.member.user.displayAvatarURL())
-                .addField(`Création le :`, `${args.member.user.createdAt.getDate()}/${args.member.user.createdAt.getMonth()}/${args.member.user.createdAt.getFullYear()} à ${args.member.user.createdAt.getHours()}:${args.member.user.createdAt.getMinutes()}`, true)
-                .addField(`Rejoint le :`, `${args.member.guild.joinedAt.getDate()}/${args.member.guild.joinedAt.getMonth()}/${args.member.guild.joinedAt.getFullYear()} à ${args.member.guild.joinedAt.getHours()}:${args.member.guild.joinedAt.getMinutes()}`, true)
-                .addField('Roles', `${args.member.roles}`)
-                //pm2 start .\src\index.js --watch
-                .setFooter(`ID : ${args.member.id}`)
-                .setTimestamp()
+                    .setAuthor(`${member.displayName}`, member.user.displayAvatarURL())
+                    .setTitle(`${member.displayName}`)
+                    .setThumbnail(member.user.displayAvatarURL())
+                    .addField(`Création le :`, `${member.user.createdAt.getDate()}/${member.user.createdAt.getMonth()}/${member.user.createdAt.getFullYear()} à ${member.user.createdAt.getHours()}:${member.user.createdAt.getMinutes()}`, true)
+                    .addField(`Rejoint le :`, `${member.guild.joinedAt.getDate()}/${member.guild.joinedAt.getMonth()}/${member.guild.joinedAt.getFullYear()} à ${member.guild.joinedAt.getHours()}:${member.guild.joinedAt.getMinutes()}`, true)
+                    .addField('Roles', `${member.roles.cache}`)
+                    .setFooter(`ID : ${member.id}`)
+                    .setTimestamp()
 
             ]
         })
@@ -42,3 +39,4 @@ class UserInfoCommand extends Command {
 }
 
 module.exports = UserInfoCommand;
+*/

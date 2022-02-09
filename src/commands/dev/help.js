@@ -1,7 +1,7 @@
-const { stripIndents } = require('common-tags');
-const { Command } = require('discord-akairo');
+/*const {stripIndents} = require('common-tags');
+const {Command} = require('discord-akairo');
 
-
+//pm2 start .\src\index.js --watch
 class helpCommand extends Command {
     constructor() {
         super('help', {
@@ -12,25 +12,25 @@ class helpCommand extends Command {
                 exemples: ['commandes', 'help userinfo']
             },
             category: 'Dev',
-            args: [{ id: 'command', type: 'commandAlias' }]
+            args: [{id: 'command', type: 'commandAlias'}]
         });
     }
 
     exec(message, args) {
-            const command = args.command;
-            const prefix = this.handler.prefix;
+        const command = args.command;
+        const prefix = this.handler.prefix;
 
-            if (!command) {
-                let embed = this.client.functions.embed()
-                    .setAuthor(`${this.client.user.username}`, this.client.user.displayAvatarURL())
-                    .setThumbnail("https://cdn.discordapp.com/attachments/763373898779197481/887604870578843668/Zw.png")
-                    .setTitle(`❄ Voici la liste de toutes les commandes textuelles ci dessous !`)
-                    .setDescription('----------------------')
+        if (!command) {
+            let embed = this.client.functions.embed()
+                .setAuthor(`${this.client.user.username}`, this.client.user.displayAvatarURL())
+                .setThumbnail("https://cdn.discordapp.com/attachments/763373898779197481/887604870578843668/Zw.png")
+                .setTitle(`❄ Voici la liste de toutes les commandes textuelles ci dessous !`)
+                .setDescription('----------------------')
 
-                for (const category of this.handler.categories.values()) {
-                    embed.addField(
-                            `❄ ${category.id}`,
-                            `${category
+            for (const category of this.handler.categories.values()) {
+                embed.addField(
+                    `❄ ${category.id}`,
+                    `${category
                         .filter(cmd => cmd.aliases.length > 0)
                         .map(cmd => `\`${cmd.aliases[0]}\``)
                         .join(' | ')
@@ -45,7 +45,7 @@ class helpCommand extends Command {
             )
                 .setFooter(`( ) = alias | < > = optionnel | [ ] = requis | (Il ne faut pas les inclure dans vos commandes)`)
 
-            return message.channel.send({ embeds: [embed] });
+            return message.channel.send({embeds: [embed]});
         }
 
         return message.channel.send(stripIndents`
@@ -63,3 +63,4 @@ class helpCommand extends Command {
 }
 
 module.exports = helpCommand;
+*/

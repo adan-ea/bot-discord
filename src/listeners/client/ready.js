@@ -1,4 +1,4 @@
-const { Listener } = require('discord-akairo');
+const {Listener} = require('discord-akairo');
 
 class ReadyListener extends Listener {
     constructor() {
@@ -9,7 +9,8 @@ class ReadyListener extends Listener {
     }
 
     exec() {
-        console.log('bot oprérationnel !');
+        console.log(`bot ${this.client.user.tag} oprérationnel !`);
+
     }
 }
 

@@ -1,9 +1,10 @@
-const { embed } = require('../util/functions');
-const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo');
+const {embed} = require('../util/functions');
+const {AkairoClient, CommandHandler, ListenerHandler} = require('discord-akairo');
+const {TOKEN} = require("../util/config");
 
 module.exports = class GotoClient extends AkairoClient {
     constructor(config = {}) {
-        super({ ownerID: '294916386072035328' }, {
+        super({ownerID: '294916386072035328'}, {
             allowedMentions: {
                 parse: ['everyone', 'roles', 'users']
             },
@@ -11,9 +12,9 @@ module.exports = class GotoClient extends AkairoClient {
             presence: {
                 status: 'dnd',
                 activities: [{
-                    name: "m_w0rldwide",
+                    name: "adan_ea",
                     type: "STREAMING",
-                    url: "https://twitch.tv/m_w0rldwide"
+                    url: "https://twitch.tv/adan_ea"
                 }]
             },
             intents: 32767
@@ -33,9 +34,19 @@ module.exports = class GotoClient extends AkairoClient {
         this.functions = {
             embed: embed
         }
+    }
 
-        this.CommandHandler.loadAll();
+    async init() {
         this.CommandHandler.useListenerHandler(this.listenerHandler);
+        //this.listenerHandler.setEmitters({commandHandler: this.commandHandler});
+        this.CommandHandler.loadAll();
+        console.log(`Commandes -> ${this.CommandHandler.modules.size}`);
         this.listenerHandler.loadAll();
+        console.log(`Listeners -> ${this.listenerHandler.modules.size}`);
+    }
+
+    async start() {
+        await this.init();
+        return this.login(TOKEN);
     }
 }

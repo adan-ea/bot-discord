@@ -1,5 +1,4 @@
-const { Command } = require('discord-akairo');
-
+const {Command} = require('discord-akairo');
 
 
 class TicketCommand extends Command {
@@ -10,40 +9,27 @@ class TicketCommand extends Command {
             ignoredCooldown: '294916386072035328',
             category: 'Misc',
             args: [{
-                    id: 'titreTicket',
-                    type: 'string',
-                },
+                id: 'titreTicket',
+                type: 'string',
+            },
                 {
                     id: 'contenuTicket',
                     type: 'string'
                 }
-
             ],
             separator: ','
         });
     }
 
 
-    exec(message, args) {
-        if (message.channel.id === "887680265806311434") {
-            if (args.titreTicket === null || args.contenuTicket === null) {
-                return message.channel.send("il te manque un truc");
-            } else {
-                return message.channel.send({
-                    embeds: [
-                        this.client.functions.embed()
-                        .setAuthor(`${message.author.username}`, message.author.avatarURL())
-                        .setTitle(`Ticket de ${message.author.username} créé : ${args.titreTicket}`)
-                        .setThumbnail("https://cdn.discordapp.com/attachments/763373898779197481/887604870578843668/Zw.png")
-                        //node .\src\index.js
-                        .setDescription(`${args.contenuTicket}`)
-                        .setFooter(`ID : ${message.author.id}`)
-                        .setTimestamp()
-                    ]
-                })
-            }
+    async exec(message, {titreTicket, contenuTicket}) {
+        if (message.channel.id === '816204474371538974') {
+            await message.startThread({
+                name: `Ticket : ${message.author.username}`,
+                reason: contenuTicket
+            })
         } else {
-            return message.channel.send(`<@${message.author.id}> merci de faire ceci dans le channel <#887680265806311434> qui est le channel approprié.`);
+            return message.channel.send(`<@${message.author.id}> merci de faire ceci dans le channel <#816204474371538974> qui est le channel approprié.`);
         }
     }
 }

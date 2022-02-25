@@ -1,4 +1,4 @@
-/*const {Listener} = require("discord-akairo");
+const {Listener} = require("discord-akairo");
 const {PRIVATE_LOG_CHANNEL, OWNER_ID} = require("../../../util/config");
 
 
@@ -14,10 +14,9 @@ class messageDeleteListener extends Listener {
         const logChannel = this.client.channels.cache.get(PRIVATE_LOG_CHANNEL);
 
         if (message.content !== null) {
-            if (!message.author.bot && message.author.id !== OWNER_ID) {
+            if (!message.author.bot) {
                 const embed = this.client.functions.embed()
                     .setAuthor(`${message.author.id}`, message.author.avatarURL())
-                    .setDescription(`Que peux bien cacher <@${message.author.id}> ?`)
                     .addField(`Message supprimé :`, message.content, false)
                     .setFooter(`Message supprimé.`)
                 await logChannel.send({embeds: [embed]})
@@ -27,4 +26,3 @@ class messageDeleteListener extends Listener {
 }
 
 module.exports = messageDeleteListener;
-*/

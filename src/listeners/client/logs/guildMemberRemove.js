@@ -1,4 +1,4 @@
-/*const {Listener} = require('discord-akairo');
+const {Listener} = require('discord-akairo');
 const {PUBLIC_LOG_CHANNEL} = require("../../../util/config");
 const getDate = require("../sharedFunctions");
 
@@ -29,4 +29,4 @@ class GuildMemberRemoveListener extends Listener {
 
 
 module.exports = GuildMemberRemoveListener;
-*/
+

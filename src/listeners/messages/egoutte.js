@@ -12,7 +12,7 @@ class egoutteListener extends Listener {
     exec(message) {
         if (!message.author.bot) {
             if (message.content.match(/Allo/gmi)) {
-                message.reply('https://cdn.discordapp.com/attachments/771934231647223848/914455579563548712/D62gh0wWwAAfbIC.jpg')
+                message.reply('https://cdn.discordapp.com/attachments/771934231647223848/932926764253052949/oui_allo_jegoutte.jpg');
             }
         }
 

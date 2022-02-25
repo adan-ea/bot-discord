@@ -1,5 +1,4 @@
 const {Listener} = require("discord-akairo");
-const {Channel} = require("discord.js");
 
 class jppListener extends Listener {
     constructor() {

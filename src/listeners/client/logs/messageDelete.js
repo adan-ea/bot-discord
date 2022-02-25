@@ -17,9 +17,9 @@ class messageDeleteListener extends Listener {
             if (!message.author.bot) {
                 const embed = this.client.functions.embed()
                     .setAuthor(`${message.author.id}`, message.author.avatarURL())
-                    .addField(`Message supprimé :`, message.content, false)
-                    .setFooter(`Message supprimé.`)
-                await logChannel.send({embeds: [embed]})
+                    .addField(`Message supprimé  dans <#${message.channelId}>:`, message.content, false)
+                    .setFooter(`Message supprimé.`);
+                await logChannel.send({embeds: [embed]});
             }
         }
     }

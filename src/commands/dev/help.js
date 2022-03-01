@@ -1,11 +1,11 @@
-/*const {stripIndents} = require('common-tags');
+const {stripIndents} = require('common-tags');
 const {Command} = require('discord-akairo');
 
 //pm2 start .\src\index.js --watch
 class helpCommand extends Command {
     constructor() {
         super('help', {
-            aliases: ['help', 'commandes'],
+            aliases: ['helpea', 'commandes', 'help'],
             description: {
                 content: 'La commande help renvoie des informations sur les commandes !',
                 usage: 'help',
@@ -23,9 +23,9 @@ class helpCommand extends Command {
         if (!command) {
             let embed = this.client.functions.embed()
                 .setAuthor(`${this.client.user.username}`, this.client.user.displayAvatarURL())
-                .setThumbnail("https://cdn.discordapp.com/attachments/763373898779197481/887604870578843668/Zw.png")
+                .setThumbnail('https://cdn.discordapp.com/attachments/763373898779197481/887604870578843668/Zw.png')
                 .setTitle(`❄ Voici la liste de toutes les commandes textuelles ci dessous !`)
-                .setDescription('----------------------')
+                .setDescription('----------------------');
 
             for (const category of this.handler.categories.values()) {
                 embed.addField(
@@ -35,7 +35,7 @@ class helpCommand extends Command {
                         .map(cmd => `\`${cmd.aliases[0]}\``)
                         .join(' | ')
                     }`
-                )
+                );
 
             }
 
@@ -43,7 +43,7 @@ class helpCommand extends Command {
                 `**\`${prefix}help <commande>\` pour plus d'informations spécifiques.**
             `
             )
-                .setFooter(`( ) = alias | < > = optionnel | [ ] = requis | (Il ne faut pas les inclure dans vos commandes)`)
+                .setFooter(`( ) = alias | < > = optionnel | [ ] = requis | (Il ne faut pas les inclure dans vos commandes)`);
 
             return message.channel.send({embeds: [embed]});
         }
@@ -63,4 +63,3 @@ class helpCommand extends Command {
 }
 
 module.exports = helpCommand;
-*/

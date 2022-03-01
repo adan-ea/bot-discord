@@ -10,7 +10,7 @@ class TicketCommand extends Command {
             category: 'Misc',
             args: [{
                 id: 'titreTicket',
-                type: 'string',
+                type: 'string'
             },
                 {
                     id: 'contenuTicket',
@@ -27,7 +27,7 @@ class TicketCommand extends Command {
             await message.startThread({
                 name: `Ticket : ${message.author.username}`,
                 reason: contenuTicket
-            })
+            });
         } else {
             return message.channel.send(`<@${message.author.id}> merci de faire ceci dans le channel <#816204474371538974> qui est le channel approprié.`);
         }

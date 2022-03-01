@@ -1,5 +1,4 @@
-const {Listener} = require("discord-akairo");
-
+const {Listener} = require('discord-akairo');
 
 class jeSuisListener extends Listener {
     constructor() {

@@ -29,7 +29,7 @@ class PingCommand extends Command {
         await sentMessage.edit({
             content: null,
             embeds: [embed]
-        })
+        });
     }
 }
 

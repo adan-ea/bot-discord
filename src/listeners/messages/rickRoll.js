@@ -1,6 +1,4 @@
-const {Listener} = require("discord-akairo");
-const {OWNER_ID} = require("../../util/config");
-
+const {Listener} = require('discord-akairo');
 
 class rickRollListener extends Listener {
     constructor() {
@@ -16,7 +14,7 @@ class rickRollListener extends Listener {
 
         if (random > 0.9 && message.author.id === '264026835493322753') {
             return message.reply(`https://www.youtube.com/watch?v=dQw4w9WgXcQ`);
-        } else if ( random > 0.99 && message.channel.id !== '816189987295854632') {
+        } else if (random > 0.99 && message.channel.id !== '816189987295854632') {
             return message.reply(`https://www.youtube.com/watch?v=dQw4w9WgXcQ`);
 
         }

@@ -1,5 +1,5 @@
-const {Listener} = require("discord-akairo");
-const {PRIVATE_LOG_CHANNEL, OWNER_ID} = require("../../../util/config");
+const {Listener} = require('discord-akairo');
+const {PRIVATE_LOG_CHANNEL, OWNER_ID} = require('../../../util/config');
 
 
 class messageDeleteListener extends Listener {

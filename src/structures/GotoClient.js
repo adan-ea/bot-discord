@@ -1,6 +1,6 @@
 const {embed} = require('../util/functions');
 const {AkairoClient, CommandHandler, ListenerHandler} = require('discord-akairo');
-const {TOKEN} = require("../util/config");
+const {TOKEN} = require('../util/config');
 
 module.exports = class GotoClient extends AkairoClient {
     constructor(config = {}) {
@@ -12,9 +12,9 @@ module.exports = class GotoClient extends AkairoClient {
             presence: {
                 status: 'dnd',
                 activities: [{
-                    name: "adan_ea",
-                    type: "STREAMING",
-                    url: "https://twitch.tv/adan_ea"
+                    name: 'adan_ea',
+                    type: 'STREAMING',
+                    url: 'https://twitch.tv/adan_ea'
                 }]
             },
             intents: 32767
@@ -29,11 +29,11 @@ module.exports = class GotoClient extends AkairoClient {
 
         this.listenerHandler = new ListenerHandler(this, {
             directory: './src/listeners/'
-        })
+        });
 
         this.functions = {
             embed: embed
-        }
+        };
     }
 
     async init() {
@@ -49,4 +49,4 @@ module.exports = class GotoClient extends AkairoClient {
         await this.init();
         return this.login(TOKEN);
     }
-}
+};

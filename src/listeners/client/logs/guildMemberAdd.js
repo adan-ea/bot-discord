@@ -1,6 +1,6 @@
 const {Listener} = require('discord-akairo');
-const {PUBLIC_LOG_CHANNEL} = require("../../../util/config");
-const getDate = require("../sharedFunctions");
+const {PUBLIC_LOG_CHANNEL} = require('../../../util/config');
+const getDate = require('../sharedFunctions');
 
 class GuildMemberAddListener extends Listener {
     constructor() {
@@ -23,7 +23,7 @@ class GuildMemberAddListener extends Listener {
             .addField(`Nombre de membres :`, `${member.guild.memberCount}`, true)
             .setFooter('T\'es vraiment bg tu sais ?', member.user.avatarURL())
             .setTimestamp();
-        await logChannel.send({embeds: [embed]})
+        await logChannel.send({embeds: [embed]});
     }
 }
 

@@ -1,5 +1,5 @@
-const {Listener} = require("discord-akairo");
-const {PRIVATE_LOG_CHANNEL, OWNER_ID} = require("../../../util/config");
+const {Listener} = require('discord-akairo');
+const {PRIVATE_LOG_CHANNEL, OWNER_ID} = require('../../../util/config');
 
 
 class messageEditListener extends Listener {
@@ -21,8 +21,8 @@ class messageEditListener extends Listener {
                     .setDescription(`Message supprimé dans <#${oldMessage.channelId}>, [voir le message](${oldMessage.url})`)
                     .addField(`Ancien message :`, oldMessage.content, false)
                     .addField(`Nouveau message :`, newMessage.content, false)
-                    .setFooter(`Message modifié.`)
-                await logChannel.send({embeds: [embed]})
+                    .setFooter(`Message modifié.`);
+                await logChannel.send({embeds: [embed]});
             }
         }
     }

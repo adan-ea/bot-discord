@@ -1,11 +1,11 @@
 const {Command} = require('discord-akairo');
 
 const clean = text => {
-    if (typeof (text) === "string")
-        return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+    if (typeof (text) === 'string')
+        return text.replace(/`/g, '`' + String.fromCharCode(8203)).replace(/@/g, '@' + String.fromCharCode(8203));
     else
         return text;
-}
+};
 
 module.exports = class EvalCommand extends Command {
     constructor() {
@@ -20,8 +20,8 @@ module.exports = class EvalCommand extends Command {
             ownerOnly: true,
             args: [{
                 id: 'code',
-                match: 'content',
-            },],
+                match: 'content'
+            }]
         });
     }
 
@@ -29,10 +29,10 @@ module.exports = class EvalCommand extends Command {
         try {
             let evaled = eval(code);
 
-            if (typeof evaled !== "string")
-                evaled = require("util").inspect(evaled);
+            if (typeof evaled !== 'string')
+                evaled = require('util').inspect(evaled);
 
-            message.channel.send(clean(evaled), {code: "xl"});
+            message.channel.send(clean(evaled), {code: 'xl'});
         } catch (err) {
             message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
         }

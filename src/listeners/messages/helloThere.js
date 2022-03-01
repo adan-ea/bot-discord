@@ -1,5 +1,5 @@
-const {Listener} = require("discord-akairo");
-const {Channel} = require("discord.js");
+const {Listener} = require('discord-akairo');
+const {Channel} = require('discord.js');
 
 class helloThereListener extends Listener {
     constructor() {

@@ -1,5 +1,6 @@
 const {Command} = require('discord-akairo');
 
+
 class PFCCommand extends Command {
     constructor() {
         super('pierrefeuilleciseaux', {
@@ -18,24 +19,31 @@ class PFCCommand extends Command {
         });
     }
 
-    async exec(message, {choice}) {
-        if (message.channelId === '930473543014178856') {
-            let botChoice = Math.floor(Math.random() * 3);
-            let possibleChoices = ['p', 'f', 'c'];
-            let possibleEmoteChoices = ['🗿', '🍁', '✂'];
+    isPlayerOneWinner(playerOneChoice, playerTwoChoice) {
+        return (playerOneChoice === 'p' && playerTwoChoice === 'c') || (playerOneChoice === 'f' && playerTwoChoice === 'p') || (playerOneChoice === 'c' && playerTwoChoice === 'f');
+    }
 
-            message.react(possibleEmoteChoices[botChoice]);
-            if (choice === possibleChoices[botChoice]) {
-                message.reply('C\'est une égalité ! On réessaie ?');
-            } else if ((choice === 'p' && possibleChoices[botChoice] === 'f') || (choice === 'f' && possibleChoices[botChoice] === 'c') || (choice === 'c' && possibleChoices[botChoice] === 'p')) {
-                message.reply('Ah dommage pour toi ! On réessaie ?');
-            } else if ((choice === 'p' && possibleChoices[botChoice] === 'c') || (choice === 'f' && possibleChoices[botChoice] === 'p') || (choice === 'c' && possibleChoices[botChoice] === 'f')) {
-                message.reply('Bravo à toi ! On réessaie ?');
-            } else {
-                message.reply('Tu dois choisir entre 🗿 (p), 🍁 (f) ou ✂ (c) !');
-            }
+    async exec(message, {choice}) {
+
+        let botChoice = Math.floor(Math.random() * 3);
+        let possibleChoices = ['p', 'f', 'c'];
+        let possibleEmoteChoices = ['🗿', '🍁', '✂'];
+
+        await message.react(possibleEmoteChoices[botChoice]);
+
+        if(!choice){
+            await message.reply('Tu dois choisir entre 🗿 (p), 🍁 (f) ou ✂ (c) !');
+        }else if (choice === possibleChoices[botChoice]) {
+            await message.reply('C\'est une égalité ! On réessaie ?');
+        } else if (!this.isPlayerOneWinner(choice, possibleChoices[botChoice])) {
+            await message.reply('Ah dommage pour toi ! On réessaie ?');
+        } else if (this.isPlayerOneWinner(choice, possibleChoices[botChoice])) {
+            await message.reply('Bravo à toi ! On réessaie ?');
+        } else {
+            await message.reply('Tu dois choisir entre 🗿 (p), 🍁 (f) ou ✂ (c) !');
         }
     }
+
 }
 
 module.exports = PFCCommand;

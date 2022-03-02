@@ -22,7 +22,7 @@ class helpCommand extends Command {
 
         if (!command) {
             let embed = this.client.functions.embed()
-                .setAuthor(`${this.client.user.username}`, this.client.user.displayAvatarURL())
+                .setAuthor({name:`${this.client.user.username}`, iconURL:this.client.user.displayAvatarURL()})
                 .setThumbnail('https://cdn.discordapp.com/attachments/763373898779197481/887604870578843668/Zw.png')
                 .setTitle(`❄ Voici la liste de toutes les commandes textuelles ci dessous !`)
                 .setDescription('----------------------');
@@ -43,7 +43,9 @@ class helpCommand extends Command {
                 `**\`${prefix}help <commande>\` pour plus d'informations spécifiques.**
             `
             )
-                .setFooter(`( ) = alias | < > = optionnel | [ ] = requis | (Il ne faut pas les inclure dans vos commandes)`);
+                .setFooter({
+                    text: `( ) = alias | < > = optionnel | [ ] = requis | (Il ne faut pas les inclure dans vos commandes)`
+                });
 
             return message.channel.send({embeds: [embed]});
         }

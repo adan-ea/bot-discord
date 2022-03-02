@@ -12,7 +12,7 @@ class GuildMemberAddListener extends Listener {
 
     async exec(member) {
         const logChannel = this.client.channels.cache.get(PUBLIC_LOG_CHANNEL);
-
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
         const embed = this.client.functions.embed()
             .setAuthor(`${member.user.id}`, member.user.avatarURL())
             .setThumbnail(member.user.avatarURL())
@@ -22,7 +22,7 @@ class GuildMemberAddListener extends Listener {
             .addField(`Création le :`, getDate(member.user.createdAt), true)
             .addField(`Nombre de membres :`, `${member.guild.memberCount}`, true)
             .setFooter('T\'es vraiment bg tu sais ?', member.user.avatarURL())
-            .setTimestamp();
+            .setColor(randomColor);
         await logChannel.send({embeds: [embed]});
     }
 }

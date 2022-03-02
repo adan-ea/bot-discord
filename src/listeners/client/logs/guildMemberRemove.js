@@ -14,14 +14,18 @@ class GuildMemberRemoveListener extends Listener {
         const logChannel = this.client.channels.cache.get(PUBLIC_LOG_CHANNEL);
 
         const embed = this.client.functions.embed()
-            .setAuthor(`${member.user.id}`, member.user.avatarURL())
+            .setAuthor({
+                name: `${member.user.id}`, iconURL: member.user.avatarURL()
+            })
             .setThumbnail('https://cdn.discordapp.com/attachments/779901444408606730/918202331743539200/unknown.png')
             .setTitle(`${member.user.tag} nous a quitté!`)
             .setDescription(`Weaklings Die. Big Deal.`)
-            .addField(`Création le :`, getDate(member.user.createdAt), true)
-            .addField(`Rejoint le :`, getDate(member.joinedAt), true)
-            .addField(`Nombre de membres :`, `${member.guild.memberCount}`, false)
-            .setFooter('So long partner.', member.user.avatarURL())
+            .addFields(
+                {name: `Création le :`, value: getDate(member.user.createdAt), inline: true},
+                {name: `Rejoint le :`, value: getDate(member.joinedAt), inline: true},
+                {name: `Nombre de membres :`, value: `${member.guild.memberCount}`, inline: false}
+            )
+            .setFooter({text: 'So long partner.', iconURL: member.user.avatarURL()})
             .setTimestamp();
         await logChannel.send({embeds: [embed]});
     }

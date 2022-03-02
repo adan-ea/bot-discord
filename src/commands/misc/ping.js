@@ -22,9 +22,7 @@ class PingCommand extends Command {
         const embed = this.client.functions.embed()
             .setTitle('🏓 Pong !')
             .addField('Latence bot', botLatency, true)
-            .addField('Latence api', apiLatency, true)
-            .setColor('#b02020')
-            .setTimestamp();
+            .addField('Latence api', apiLatency, true);
 
         await sentMessage.edit({
             content: null,

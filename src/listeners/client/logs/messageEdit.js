@@ -17,11 +17,13 @@ class messageEditListener extends Listener {
             if (!newMessage.author.bot) {
 
                 const embed = this.client.functions.embed()
-                    .setAuthor(`<@${newMessage.author.id}>`, newMessage.author.avatarURL())
-                    .setDescription(`Message supprimé dans <#${oldMessage.channelId}>, [voir le message](${oldMessage.url})`)
-                    .addField(`Ancien message :`, oldMessage.content, false)
-                    .addField(`Nouveau message :`, newMessage.content, false)
-                    .setFooter(`Message modifié.`);
+                    .setAuthor({name: `<@${newMessage.author.id}>`, iconURL: newMessage.author.avatarURL()})
+                    .setDescription(`Message edité dans <#${oldMessage.channelId}>, [voir le message](${oldMessage.url})`)
+                    .addFields(
+                        {name:`Ancien message :`, value:oldMessage.content, inline: false},
+                        {name:`Nouveau message :`, value:newMessage.content, inline: false}
+                    )
+                    .setFooter({text:`Message modifié.`});
                 await logChannel.send({embeds: [embed]});
             }
         }

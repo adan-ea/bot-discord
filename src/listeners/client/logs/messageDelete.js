@@ -1,5 +1,5 @@
 const {Listener} = require('discord-akairo');
-const {PRIVATE_LOG_CHANNEL, OWNER_ID} = require('../../../util/config');
+const {PRIVATE_LOG_CHANNEL} = require('../../../util/config');
 
 
 class messageDeleteListener extends Listener {
@@ -12,13 +12,15 @@ class messageDeleteListener extends Listener {
 
     async exec(message) {
         const logChannel = this.client.channels.cache.get(PRIVATE_LOG_CHANNEL);
-
         if (message.content !== null) {
             if (!message.author.bot) {
                 const embed = this.client.functions.embed()
-                    .setAuthor(`${message.author.id}`, message.author.avatarURL())
-                    .addField(`Message supprimé  dans <#${message.channelId}>:`, message.content, false)
-                    .setFooter(`Message supprimé.`);
+                    .setAuthor(
+                        {name: `${message.author.id}`, iconURL: message.author.avatarURL()}
+                    )
+                    .setDescription(`Message supprimé dans <#${message.channelId}>, [voir le salon](${message.url})`)
+                    .addField(`Message supprimé :`, message.content, false)
+                    .setFooter({text: `Message supprimé.`});
                 await logChannel.send({embeds: [embed]});
             }
         }

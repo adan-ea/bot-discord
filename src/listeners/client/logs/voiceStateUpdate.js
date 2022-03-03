@@ -89,12 +89,12 @@ class voiceStateUpdate extends Listener {
     async exec(oldState, newState) {
 
         if (oldState.channel === null && newState.channel !== null) {
-            await createNewChannel(newState);
+            await createNewChannel(newState).catch(error => console.log(error));
         } else if (oldState.channel !== null && newState.channel === null) {
-            await deleteEmptyChannel(oldState);
+            await deleteEmptyChannel(oldState).catch(error => console.log(error));
         } else if (isMoved(oldState, newState)) {
-            await deleteEmptyChannel(oldState);
-            await createNewChannel(newState);
+            await deleteEmptyChannel(oldState).catch(error => console.log(error));
+            await createNewChannel(newState).catch(error => console.log(error));
         }
     }
 }

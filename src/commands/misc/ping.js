@@ -27,7 +27,7 @@ class PingCommand extends Command {
         await sentMessage.edit({
             content: null,
             embeds: [embed]
-        });
+        }).catch(error => message.reply('une erreur c\'est produite.'));
     }
 }
 

@@ -1,10 +1,10 @@
 const {embed} = require('../util/functions');
 const {AkairoClient, CommandHandler, ListenerHandler} = require('discord-akairo');
-const {TOKEN} = require('../util/config');
+const {OWNER_ID} = require('../util/config');
 
 module.exports = class GotoClient extends AkairoClient {
     constructor(config = {}) {
-        super({ownerID: '294916386072035328'}, {
+        super({ownerID: OWNER_ID}, {
             allowedMentions: {
                 parse: ['everyone', 'roles', 'users']
             },
@@ -47,6 +47,6 @@ module.exports = class GotoClient extends AkairoClient {
 
     async start() {
         await this.init();
-        return this.login(TOKEN);
+        return this.login(process.env.DISCORD_TOKEN);
     }
 };

@@ -17,10 +17,12 @@ class TicTacToeCommand extends Command {
 
 
     async exec(message) {
+        await message.delete().catch(error => message.reply('une erreur c\'est produite.'));
         if (message.channelId === '930473543014178856') {
             const game = new TicTacToe({language: 'fr'});
             game.handleMessage(message);
         }
+
     }
 }
 

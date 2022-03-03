@@ -31,16 +31,16 @@ class PFCCommand extends Command {
 
         await message.react(possibleEmoteChoices[botChoice]);
 
-        if(!choice){
-            await message.reply('Tu dois choisir entre 🗿 (p), 🍁 (f) ou ✂ (c) !');
-        }else if (choice === possibleChoices[botChoice]) {
-            await message.reply('C\'est une égalité ! On réessaie ?');
+        if (!choice) {
+            await message.reply('Tu dois choisir entre 🗿 (p), 🍁 (f) ou ✂ (c) !').catch(error => message.reply('une erreur c\'est produite.'));
+        } else if (choice === possibleChoices[botChoice]) {
+            await message.reply('C\'est une égalité ! On réessaie ?').catch(error => message.reply('une erreur c\'est produite.'));
         } else if (!this.isPlayerOneWinner(choice, possibleChoices[botChoice])) {
-            await message.reply('Ah dommage pour toi ! On réessaie ?');
+            await message.reply('Ah dommage pour toi ! On réessaie ?').catch(error => message.reply('une erreur c\'est produite.'));
         } else if (this.isPlayerOneWinner(choice, possibleChoices[botChoice])) {
-            await message.reply('Bravo à toi ! On réessaie ?');
+            await message.reply('Bravo à toi ! On réessaie ?').catch(error => message.reply('une erreur c\'est produite.'));
         } else {
-            await message.reply('Tu dois choisir entre 🗿 (p), 🍁 (f) ou ✂ (c) !');
+            await message.reply('Tu dois choisir entre 🗿 (p), 🍁 (f) ou ✂ (c) !').catch(error => message.reply('une erreur c\'est produite.'));
         }
     }
 

@@ -24,7 +24,7 @@ class messageEditListener extends Listener {
                         {name:`Nouveau message :`, value:newMessage.content, inline: false}
                     )
                     .setFooter({text:`Message modifié.`});
-                await logChannel.send({embeds: [embed]});
+                await logChannel.send({embeds: [embed]}).catch(error => message.reply('une erreur c\'est produite.'));
             }
         }
     }

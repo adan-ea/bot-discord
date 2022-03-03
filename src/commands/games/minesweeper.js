@@ -32,6 +32,7 @@ class MinesweeperCommand extends Command {
 
 
     async exec(message, {rows, columns, mines}) {
+        await message.delete();
         if (message.channelId === '930473543014178856') {
             if (!rows) {
                 return message.reply(':warning: Merci de fournir un nombre correct de lignes.');

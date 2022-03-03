@@ -21,7 +21,7 @@ class messageDeleteListener extends Listener {
                     .setDescription(`Message supprimé dans <#${message.channelId}>, [voir le salon](${message.url})`)
                     .addField(`Message supprimé :`, message.content, false)
                     .setFooter({text: `Message supprimé.`});
-                await logChannel.send({embeds: [embed]});
+                await logChannel.send({embeds: [embed]}).catch(error => message.reply('une erreur c\'est produite.'));
             }
         }
     }

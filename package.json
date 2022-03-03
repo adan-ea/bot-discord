@@ -4,9 +4,7 @@
   },
   "dependencies": {
     "common-tags": "^1.8.0",
-    "connectfour-discord": "^0.1.17",
     "discord-akairo": "github:SkyBlockDev/discord-akairo",
-    "discord-hangman": "^1.2.2",
     "discord-tictactoe": "^3.0.0",
     "discord.js": "^13.1.0",
     "discord.js-minesweeper": "^1.1.0"

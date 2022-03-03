@@ -1,5 +1,4 @@
 const {Listener} = require('discord-akairo');
-const {Channel} = require('discord.js');
 
 class helloThereListener extends Listener {
     constructor() {
@@ -10,10 +9,8 @@ class helloThereListener extends Listener {
     }
 
     exec(message) {
-        if (!message.author.bot) {
-            if (message.content.match(/hello there/gmi)) {
-                message.reply('https://tenor.com/view/hello-there-general-kenobi-star-wars-grevious-gif-17774326');
-            }
+        if (!message.author.bot && message.content.match(/hello there/gmi)) {
+            message.reply('https://tenor.com/view/hello-there-general-kenobi-star-wars-grevious-gif-17774326');
         }
     }
 }
